@@ -1,0 +1,183 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="HospitalManagementSystem.Site1" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Hospital Management System</title>
+    <%--bootstrap css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--datatables css--%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <%--fontawesome css--%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+
+    <%--our custom css--%>
+    <link href="css/costumstylesheet.css" rel="stylesheet" />
+
+    <%--jquery--%>
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <%--popper js--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <%--bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <%--Datatables js--%>
+    <script src="datatables/js/jquery.dataTables.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+
+        <!-- 1st Header -->
+        <div class="pt-3 bg-warning">
+            <ul class=" nav justify-content-center">
+	             <li> <a style="color:black;" href="ContactUs.aspx"><i class=" pr-2 fa fa-location-arrow "aria-hidden="true"></i>Nakhkhu Ukalo Road, Lalitpur, Nepal</a></li>
+	             <li><i class="fa fa-phone px-2" aria-hidden="true"></i>+977-1-4217766</li>
+	             <li><i class="fa fa-envelope px-2 " aria-hidden="true"></i> <a href="info@nepalmediciti.com">info@nepalmediciti.com</a></li>
+            </ul>
+            <br />
+        </div>
+ 
+        <!-- 2st Header --->
+                   
+        <div>
+           <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="Home.aspx">
+          <img width="60" style="margin-right:20px;" src="imgs/logo.png" />
+          Hospital 
+      </a>
+
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Home.aspx">Home</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="AboutUs.aspx">About Us</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="Services.aspx">Services</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="News.aspx">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Members.aspx">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ContactUs.aspx">Contact Us</a>
+                        </li>
+
+                    </ul>
+      <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            
+                           <asp:LinkButton class="nav-link" CausesValidation="False" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" Visible="False">Appointment</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" CausesValidation="False" runat="server" OnClick="LinkButton2_Click" Visible="False">View Report</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" CausesValidation="False" runat="server" OnClick="LinkButton3_Click" Visible="False" >Get Invoice</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                          
+                         <asp:LinkButton CausesValidation="False" class="nav-link" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click" ><i class="fa-solid fa-user" style="padding-right:5px;"></i>User Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton5" runat="server" CausesValidation="False" OnClick="LinkButton5_Click"><i class="fa-solid fa-right-to-bracket" style="padding-right:5px;"></i>Sign Up</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton6" runat="server" CausesValidation="False" OnClick="LinkButton6_Click" Visible="False">Logout</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" CausesValidation="False" OnClick="LinkButton7_Click" Visible="False">Hello user</asp:LinkButton>
+
+                        </li>
+                    </ul>
+    </div>
+</nav>
+
+        </div>
+
+
+        <!-- Main Content Placeholder -->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Main Content Placeholder -->
+
+        <footer>
+            <div id="footer1" class="container-fluid">
+               
+                <div class="footer-basic ">
+                     <div class="row">
+                         <!-- Admin access button-->
+                    <div class="col-12 col-sm-12 col-md-12 text-center">
+                        <p>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton8" CausesValidation="False" runat="server" OnClick="LinkButton8_Click" >Admin Login</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton17" CausesValidation="False" runat="server" OnClick="LinkButton17_Click">Super Admin Login</asp:LinkButton>
+                            &nbsp;                           
+                            <asp:LinkButton class="footerlinks" ID="LinkButton15" CausesValidation="False" runat="server" OnClick="LinkButton15_Click">Doctor Login</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton16" CausesValidation="False" runat="server" OnClick="LinkButton16_Click" >Lab Login</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton18" runat="server" OnClick="LinkButton18_Click" Visible="False">Add Admin</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton19" runat="server" OnClick="LinkButton19_Click" Visible="False">Add Lab Member</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server" OnClick="LinkButton9_Click" Visible="False" >Doctor Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server" OnClick="LinkButton10_Click" Visible="False" >Patient Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server" OnClick="LinkButton11_Click" Visible="False">Reoprt Inventory </asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click" Visible="False">Invoice Inventory </asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton13" runat="server" OnClick="LinkButton13_Click" Visible="False"> Appointment Issuing</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton20" runat="server" OnClick="LinkButton20_Click" Visible="False"> Appointment Status</asp:LinkButton>
+                            &nbsp;
+                             <asp:LinkButton class="footerlinks" ID="LinkButton14" runat="server" OnClick="LinkButton14_Click" Visible="False">Member Management</asp:LinkButton>
+                        </p>
+                    </div>
+                </div>
+                    <!--Social Icons-->
+                    <center>
+            <div class="social">
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+
+            </div>
+                        </center>
+                    <!-- Footer nav button -->
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="Home.aspx">Home</a></li>
+                <li class="list-inline-item"><a href="Services.aspx">Services</a></li>
+                <li class="list-inline-item"><a href="AboutUs.aspx">About</a></li>
+                <li class="list-inline-item"><a href="News.aspx">News</a></li>
+                <li class="list-inline-item"><a href="Members.aspx">Members</a></li>
+            </ul>
+          </div>
+            </div>
+            <div id="footer2" class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 text-center">
+                        <p class ="Mynamesheet">© 2018 Nepal Mediciti Hospital. All rights reserved |
+                             Design By Raj Lama.
+                         </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
